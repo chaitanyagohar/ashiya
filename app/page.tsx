@@ -210,7 +210,7 @@ export default function Home() {
           <div className="flex animate-marquee-infinite">
             {[...logos, ...logos].map((logo, index) => (
               <div key={index} className="w-48 h-16 relative flex-shrink-0 mx-8">
-                <Image src={logo} alt={`Client logo ${index + 1}`} fill className="object-contain filter invert" />
+                <Image src={logo} alt={`Client logo ${index + 1}`} fill className="object-contain " />
               </div>
             ))}
           </div>
