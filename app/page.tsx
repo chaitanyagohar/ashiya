@@ -256,10 +256,10 @@ export default function Home() {
       <style jsx global>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-100%); }
         }
         .animate-marquee-infinite {
-          animation: marquee 40s linear infinite;
+          animation: marquee 10s linear infinite;
         }
       `}</style>
     </div>
