@@ -188,7 +188,7 @@ export default function ServicesPage() {
             <div className="container mx-auto px-4 max-w-3xl text-center">
                  <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }}>
                     <p className="text-lg md:text-2xl font-serif leading-relaxed text-gray-300">
-                        "The commercial interior designed by Ashiya has completely transformed our workspace. Their professionalism and innovative approach resulted in a space that is both functional and inspiring."
+                        &quot;The commercial interior designed by Ashiya has completely transformed our workspace. Their professionalism and innovative approach resulted in a space that is both functional and inspiring.&quot;
                     </p>
                     <p className="mt-8 font-semibold uppercase tracking-wider text-gray-400">- Corporate Client, Wellington</p>
                  </motion.div>

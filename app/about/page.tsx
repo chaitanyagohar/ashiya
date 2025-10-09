@@ -126,7 +126,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }}>
               <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">Ready to Build Your Vision?</h2>
-              <p className="text-gray-300 text-lg mb-10">Let's discuss how we can bring your next project to life.</p>
+              <p className="text-gray-300 text-lg mb-10">Let&apos;s discuss how we can bring your next project to life.</p>
               <Link href="/contact">
                 <button className="bg-[#c82a2b] text-white px-10 py-4 rounded-full font-semibold transition-transform duration-300 hover:scale-105">
                   Get in Touch

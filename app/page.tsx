@@ -106,7 +106,7 @@ export default function Home() {
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}>
                 <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Our Philosophy</p>
                 <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">Architecture is the art of turning vision into reality.</h2>
-                <p className="text-gray-300 leading-relaxed">Archisphere is a collective of visionary designers and builders dedicated to crafting spaces that inspire and endure. We merge timeless aesthetics with modern functionality, ensuring every project is a testament to quality, innovation, and our clients' aspirations.</p>
+                <p className="text-gray-300 leading-relaxed">Archisphere is a collective of visionary designers and builders dedicated to crafting spaces that inspire and endure. We merge timeless aesthetics with modern functionality, ensuring every project is a testament to quality, innovation, and our clients&apos; aspirations.</p>
                 <div className="mt-12 pt-8 border-t border-gray-700 grid grid-cols-3 gap-8 text-center">
                   <div><p className="text-4xl font-bold"><AnimatedCounter value={700} />+</p><p className="text-gray-400 mt-1">Projects</p></div>
                   <div><p className="text-4xl font-bold"><AnimatedCounter value={200} />+</p><p className="text-gray-400 mt-1">Clients</p></div>
@@ -195,7 +195,7 @@ export default function Home() {
             <div className="container mx-auto px-4 max-w-3xl text-center">
                  <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }}>
                     <p className="text-lg md:text-2xl font-serif leading-relaxed text-gray-300">
-                        "Working with Archisphere was a transformative experience. Their attention to detail and commitment to quality is unparalleled. They didn't just build a house; they created our home."
+                        &quot;Working with Archisphere was a transformative experience. Their attention to detail and commitment to quality is unparalleled. They didn&apos;t just build a house; they created our home.&quot;
                     </p>
                     <p className="mt-8 font-semibold uppercase tracking-wider text-gray-400">- John & Jane Doe, Residential Client</p>
                  </motion.div>
@@ -220,8 +220,8 @@ export default function Home() {
         <section className="bg-[#1a1a1a] py-32">
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }}>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">Let's Create Something Timeless Together.</h2>
-              <p className="text-gray-300 text-lg mb-10">Have a project in mind? We'd love to hear about it.</p>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">Let&apos;s Create Something Timeless Together.</h2>
+              <p className="text-gray-300 text-lg mb-10">Have a project in mind? We&apos;d love to hear about it.</p>
               <Link href="/contact">
                 <button className="bg-[#c82a2b] text-white px-10 py-4 rounded-full font-semibold transition-transform duration-300 hover:scale-105">
                   Get in Touch
