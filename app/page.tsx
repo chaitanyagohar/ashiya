@@ -298,8 +298,8 @@ export default function Home() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12 items-center justify-items-center max-w-6xl mx-auto">
               {[
-                { name: "Microsoft", src: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
-                { name: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" },
+                { name: "Microsoft", src: "/logo1.png" },
+                { name: "Visa", src: "/logo2.png" },
                 { name: "Amazon", src: "/logo3.jpg" },
                 { name: "Goldman Sachs", src: "/logo4.png" },
                 { name: "ABB", src: "/logo5.png" },
