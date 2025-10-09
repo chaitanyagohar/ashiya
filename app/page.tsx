@@ -106,7 +106,7 @@ export default function Home() {
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}>
                 <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Our Philosophy</p>
                 <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">Architecture is the art of turning vision into reality.</h2>
-                <p className="text-gray-300 leading-relaxed">Archisphere is a collective of visionary designers and builders dedicated to crafting spaces that inspire and endure. We merge timeless aesthetics with modern functionality, ensuring every project is a testament to quality, innovation, and our clients&apos; aspirations.</p>
+                <p className="text-gray-300 leading-relaxed">Ashiya is a collective of visionary designers and builders dedicated to crafting spaces that inspire and endure. We merge timeless aesthetics with modern functionality, ensuring every project is a testament to quality, innovation, and our clients&apos; aspirations.</p>
                 <div className="mt-12 pt-8 border-t border-gray-700 grid grid-cols-3 gap-8 text-center">
                   <div><p className="text-4xl font-bold"><AnimatedCounter value={700} />+</p><p className="text-gray-400 mt-1">Projects</p></div>
                   <div><p className="text-4xl font-bold"><AnimatedCounter value={200} />+</p><p className="text-gray-400 mt-1">Clients</p></div>
@@ -142,34 +142,55 @@ export default function Home() {
           </div>
         </section>
         
-        {/* --- NEW: Featured Projects Section --- */}
-        <section className="bg-[#111111] py-32">
-            <div className="container mx-auto px-4 max-w-7xl">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }} className="text-center mb-16">
-                    <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Our Work</p>
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold">Featured Projects</h2>
-                </motion.div>
-                <div className="space-y-24">
-                    {projects.map((project, index) => (
-                        <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.8 }} className="grid lg:grid-cols-2 gap-12 items-center">
-                            <div className={`relative h-[500px] rounded-lg overflow-hidden ${index % 2 === 0 ? 'lg:order-last' : ''}`}>
-                                <Image src={project.img} alt={project.title} fill className="object-cover"/>
-                            </div>
-                            <div className="text-center lg:text-left">
-                                <h3 className="text-2xl md:text-3xl font-serif font-bold">{project.title}</h3>
-                                <p className="text-gray-400 mt-2">{project.location}</p>
-                                <Link href="/projects">
-                                    <button className="mt-6 text-white font-semibold group transition-all duration-300">
-                                        View Project
-                                        <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#c82a2b]"></span>
-                                    </button>
-                                </Link>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
+       {/* --- Featured Project Spotlight Section --- */}
+<section className="bg-[#111111] py-32">
+  <div className="container mx-auto px-4 max-w-7xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.8 }}
+      className="text-center mb-16"
+    >
+      <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Our Work</p>
+      <h2 className="text-3xl md:text-4xl font-serif font-bold">Featured Project</h2>
+    </motion.div>
+
+    {/* Spotlight Project */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+      className="grid lg:grid-cols-2 gap-12 items-center"
+    >
+      {/* Video */}
+      <div className="relative h-[500px]  overflow-hidden lg:order-last">
+        <video
+          src="/file.mp4" // Replace with your video path
+          className="w-full h-full object-cover "
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
+
+      {/* Text Info */}
+      <div className="text-center lg:text-left">
+        <h3 className="text-2xl md:text-3xl font-serif font-bold">Ritz-Carlton Penthouse</h3>
+        <p className="text-gray-400 mt-2">Wellington, NZ</p>
+        <Link href="/projects">
+          <button className="mt-6 text-white font-semibold group transition-all duration-300">
+            View Project
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#c82a2b]"></span>
+          </button>
+        </Link>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
         {/* --- NEW: Our Process Section --- */}
         <section className="bg-[#1a1a1a] py-32">
@@ -195,7 +216,7 @@ export default function Home() {
             <div className="container mx-auto px-4 max-w-3xl text-center">
                  <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }}>
                     <p className="text-lg md:text-2xl font-serif leading-relaxed text-gray-300">
-                        &quot;Working with Archisphere was a transformative experience. Their attention to detail and commitment to quality is unparalleled. They didn&apos;t just build a house; they created our home.&quot;
+                        &quot;Working with Ashiya was a transformative experience. Their attention to detail and commitment to quality is unparalleled. They didn&apos;t just build a house; they created our home.&quot;
                     </p>
                     <p className="mt-8 font-semibold uppercase tracking-wider text-gray-400">- John & Jane Doe, Residential Client</p>
                  </motion.div>

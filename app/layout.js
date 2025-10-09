@@ -7,7 +7,7 @@ import Footer from './components/Footer'; // Add this line
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Archisphere | Modern Architecture',
+  title: 'Ashiya | Modern Architecture',
   description: 'An architectural firm based in Wellington.',
 };
 
