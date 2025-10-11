@@ -35,7 +35,7 @@ export default function ProductsPage() {
         {/* --- Hero Section --- */}
         <section className="h-[70vh] min-h-[500px] relative flex flex-col items-center justify-center text-center">
           <Image
-            src="/product-hero.jpg"
+            src="/about5.avif"
             alt="Close-up of premium architectural hardware"
             fill
             priority

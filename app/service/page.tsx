@@ -95,7 +95,7 @@ export default function ServicesPage() {
         {/* --- Hero Section --- */}
         <section className="h-[70vh] min-h-[500px] relative flex flex-col items-center justify-center text-center">
           <Image
-            src="/service-hero.jpg"
+            src="/about4.jpg"
             alt="Blueprint of a modern architectural design"
             fill
             priority

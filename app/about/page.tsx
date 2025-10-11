@@ -51,7 +51,7 @@ export default function AboutPage() {
       <main>
         {/* --- Hero Section --- */}
         <section className="h-[70vh] min-h-[500px] relative flex flex-col items-center justify-center text-center">
-          <Image src="/about-hero.jpg" alt="Team collaborating in a modern office" fill priority className="object-cover absolute z-0" />
+          <Image src="/about2.jpg" alt="Team collaborating in a modern office" fill priority className="object-cover absolute z-0" />
           <div className="absolute inset-0 bg-black/60 z-10" />
           <div className="relative z-20 px-6">
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-4xl md:text-7xl font-serif font-bold leading-tight">
@@ -100,7 +100,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }} className="h-[600px] w-full relative rounded-lg overflow-hidden lg:order-last">
-                <Image src="/about2.jpg" alt="Architectural detail of a modern building" fill className="object-cover" />
+                <Image src="/about3.jpg" alt="Architectural detail of a modern building" fill className="object-cover" />
               </motion.div>
                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ staggerChildren: 0.1 }}>
                 <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Why Choose Ashiya</p>
