@@ -413,7 +413,7 @@ export default function Home() {
               <p className="text-lg md:text-2xl font-serif leading-relaxed text-gray-300">
                 &quot;Working with Ashiya was a transformative experience. Their
                 attention to detail and commitment to quality is unparalleled.
-                They didn&apos;t just build our office space , they created better than our perpection&quot;
+                They didn&apos;t just build our office space , they created better than our perception&quot;
               </p>
               <p className="mt-8 font-semibold uppercase tracking-wider text-gray-400">
                 - Babu Poovan , Miginfra
