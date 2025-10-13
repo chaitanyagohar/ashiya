@@ -5,12 +5,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const productCategories = [
-  { name: "Door Hardware", imageUrl: "/pro1.jpg", description: "High-quality handles, hinges, and locks designed for modern architecture." },
-  { name: "Entrance Systems", imageUrl: "/pro2.jpg", description: "Automated and manual entrance solutions that combine security with elegance." },
-  { name: "Interior Glass Systems", imageUrl: "/pro3.jpg", description: "Secure and stylish fittings for seamless glass installations in any interior." },
-  { name: "Glass Cabins", imageUrl: "/pro4.jpeg", description: "Modular and custom glass cabin solutions for offices and commercial spaces." },
-  { name: "Electronic Access & Control", imageUrl: "/pro5.jpeg", description: "Advanced security systems for enhanced safety and convenient access." },
-  { name: "Movable Walls", imageUrl: "/pro6.jpeg", description: "Smart, space-saving automated partitions for versatile and dynamic interiors." },
+  { name: "Door Hardware", imageUrl: "/pro1.jpg", slug: "door-hardware", description: "High-quality handles, hinges, and locks designed for modern architecture." },
+  { name: "Entrance Systems", imageUrl: "/pro2.jpg", slug: "entrance-systems", description: "Automated and manual entrance solutions that combine security with elegance." },
+  { name: "Interior Glass Systems", imageUrl: "/pro3.jpg", slug: "interior-glass-systems", description: "Secure and stylish fittings for seamless glass installations in any interior." },
+  { name: "Mechanical Keys Systems", imageUrl: "/K1.avif", slug: "mechanical-keys", description: "Modular and custom glass cabin solutions for offices and commercial spaces." },
+  { name: "Electronic Access & Control", imageUrl: "/pro5.jpeg", slug: "electronic-access-control", description: "Advanced security systems for enhanced safety and convenient access." },
+  { name: "Movable Walls", imageUrl: "/pro6.jpeg", slug: "movable-walls", description: "Smart, space-saving automated partitions for versatile and dynamic interiors." },
 ];
 
 const QualityFeature = ({ icon, title, desc, delay }: { icon: React.ReactNode, title: string, desc: string, delay: number }) => (
@@ -35,7 +35,7 @@ export default function ProductsPage() {
         {/* --- Hero Section --- */}
         <section className="h-[70vh] min-h-[500px] relative flex flex-col items-center justify-center text-center">
           <Image
-            src="/about5.avif"
+            src="/producttop.jpeg"
             alt="Close-up of premium architectural hardware"
             fill
             priority
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                 transition={{ duration: 0.8 }} 
                 className="h-[500px] w-full relative rounded-lg overflow-hidden"
               >
-                <Image src="/producttop.jpeg" alt="GEZE Germany branded hardware" fill className="object-cover" />
+                <Image src="/geze.jpeg" alt="GEZE Germany branded hardware" fill className="object-cover" />
               </motion.div>
             </div>
           </div>
@@ -99,36 +99,37 @@ export default function ProductsPage() {
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {productCategories.map((category, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: index * 0.1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  className="group"
-                >
-                  <div className="overflow-hidden mb-4 rounded-lg relative">
-                    <Image
-                      src={category.imageUrl}
-                      alt={category.name}
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-cover aspect-[3/2] transition-transform duration-500 group-hover:scale-105"
-                    />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <p className="text-white text-sm">{category.description}</p>
+                <Link href={`/products/${category.slug}`} key={index}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: index * 0.1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="group"
+                  >
+                    <div className="overflow-hidden mb-4 rounded-lg relative">
+                      <Image
+                        src={category.imageUrl}
+                        alt={category.name}
+                        width={600}
+                        height={400}
+                        className="w-full h-auto object-cover aspect-[3/2] transition-transform duration-500 group-hover:scale-105"
+                      />
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                          <p className="text-white text-sm">{category.description}</p>
+                      </div>
                     </div>
-                  </div>
-                  <h3 className="text-xl font-serif font-semibold text-center group-hover:text-[#c82a2b] transition-colors duration-300">
-                    {category.name}
-                  </h3>
-                </motion.div>
+                    <h3 className="text-xl font-serif font-semibold text-center group-hover:text-[#c82a2b] transition-colors duration-300">
+                      {category.name}
+                    </h3>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* --- NEW: Commitment to Quality Section --- */}
+        {/* --- Commitment to Quality Section --- */}
         <section className="bg-[#111111] py-32">
             <div className="container mx-auto px-4 max-w-7xl">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }} className="text-center mb-20">
