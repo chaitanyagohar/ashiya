@@ -43,7 +43,7 @@ const servicesData = [
     ],
   },
   {
-    imageUrl: "/comm2.avif",
+    imageUrl: "/civil.jpg",
     title: "CIVIL CONSTRUCTION",
     description: "We specialize in high-quality civil construction, delivering projects that stand the test of time with a focus on innovation, structural integrity, and superior craftsmanship.",
     expertiseTitle: "Our Civil Construction Expertise:",

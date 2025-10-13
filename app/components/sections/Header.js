@@ -11,7 +11,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Service", href: "/service" },
   { name: "Products", href: "/products" },
-   { name: "Clientile", href: "/clientile" },
+  { name: "Clientile", href: "/clientile" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -19,6 +19,7 @@ export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   // Prevent hydration mismatch
   useEffect(() => {
@@ -35,24 +36,42 @@ export default function Header() {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
 
-  if (!mounted) return null; // ✅ fixes hydration errors
+  // Detect scroll direction and toggle header visibility
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY + 5) {
+        // Scrolling Down → Hide Header
+        setVisible(false);
+      } else if (currentScrollY < lastScrollY - 5) {
+        // Scrolling Up → Show Header
+        setVisible(true);
+      }
+      lastScrollY = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-sm"
+      initial={{ y: 0 }}
+      animate={{ y: visible ? 0 : -100 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm transition-transform duration-300"
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="nameofbusiness logo"
             width={120}
-            height={40}
-            className="object-contain"
+            height={90}
+            className="object-cover"
             priority
           />
         </Link>
@@ -73,8 +92,8 @@ export default function Header() {
                 {isActive && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute left-0 -bottom-1 block h-[2px] w-full "
-                     style={{ backgroundColor: "#c82a2b" }} 
+                    className="absolute left-0 -bottom-1 block h-[2px] w-full"
+                    style={{ backgroundColor: "#c82a2b" }}
                   />
                 )}
               </Link>
@@ -90,7 +109,7 @@ export default function Header() {
           let&apos;s talk
         </Link>
 
-        {/* Hamburger Button (Mobile) */}
+        {/* Hamburger (Mobile) */}
         <button
           className="md:hidden relative w-8 h-5 flex flex-col justify-between items-center"
           onClick={() => setMenuOpen(!menuOpen)}

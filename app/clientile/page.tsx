@@ -5,11 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// --- NEW: Dynamic Logo Component ---
-// This component automatically finds the correct image file extension.
+// --- Dynamic Logo Component ---
 const DynamicLogo = ({ baseSrc, name }: { baseSrc: string, name: string }) => {
   const [imgSrc, setImgSrc] = useState<string | null>(null);
-  const extensions = ["avif" ];
+  const extensions = ["jpg","png","jpeg"];
 
   useEffect(() => {
     let isMounted = true;
@@ -18,11 +17,10 @@ const DynamicLogo = ({ baseSrc, name }: { baseSrc: string, name: string }) => {
       for (const ext of extensions) {
         const potentialSrc = `${baseSrc}.${ext}`;
         try {
-          // Check if the image resource exists before trying to load it
           const response = await fetch(potentialSrc);
           if (response.ok && isMounted) {
             setImgSrc(potentialSrc);
-            return; // Stop searching once a valid image is found
+            return;
           }
         } catch (error) {
           // Silently fail and try the next extension
@@ -33,12 +31,11 @@ const DynamicLogo = ({ baseSrc, name }: { baseSrc: string, name: string }) => {
     findImage();
 
     return () => {
-      isMounted = false; // Cleanup to prevent state updates on unmounted component
+      isMounted = false;
     };
   }, [baseSrc]);
 
   if (!imgSrc) {
-    // Render a subtle placeholder while the component searches for the correct image file
     return <div className="w-full h-full bg-gray-800/50 rounded animate-pulse" />;
   }
 
@@ -54,7 +51,6 @@ const DynamicLogo = ({ baseSrc, name }: { baseSrc: string, name: string }) => {
 
 
 // --- Data for Client Logos ---
-// Now, we only need the client name. The path is generated automatically based on the index.
 const clientNames = [
   "ABB", "ACE", "Adrianse", "AECOM", "Aeries Analytics", "AETRIO", "Alpha Trading Company", "Amazon", 
   "Amazon Pay", "Amart", "ANSR", "Aparna Craft", "Arcadis", "Artizen", "Aspigo Ventures", "Baker Tilly", 
@@ -77,7 +73,7 @@ const clientNames = [
 ];
 
 const clientLogos = clientNames.map((name, index) => ({
-    baseSrc: `/logos/logo${index + 1}`,
+    baseSrc: `/company/logo${index + 1}`,
     name: name,
 }));
 
@@ -130,21 +126,15 @@ export default function ClientelePage() {
                 <h2 className="text-3xl md:text-4xl font-serif font-bold">A Legacy of Successful Partnerships</h2>
             </motion.div>
 
-            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 gap-x-8 gap-y-12 items-center">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-8 gap-y-12 items-center justify-center">
               {clientLogos.map((logo, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: (index % 32) * 0.05,
-                  }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  className="relative h-16 transition-transform duration-300 hover:scale-110"
+                  // --- MODIFIED: Changed w-32 to w-full for flexible width ---
+                  className="relative w-full h-20 p-2 transition-transform duration-300 hover:scale-110"
                 >
                   <DynamicLogo baseSrc={logo.baseSrc} name={logo.name} />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

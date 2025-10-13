@@ -136,13 +136,13 @@ export default function Home() {
           >
             <motion.div style={{ scale }} className="h-full w-full relative">
               <Image
-                src="/hero.avif"
+                src="/hero-main.webp"
                 alt="Modern architecture background"
                 fill
                 priority
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/60" />
+              <div className="absolute inset-0 bg-black/10" />
             </motion.div>
           </motion.div>
           <div className="relative z-10 flex flex-col items-center space-y-6 px-6">
@@ -158,7 +158,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl max-w-2xl text-gray-300"
+              className="text-lg md:text-xl max-w-2xl text-white"
             >
               We craft exceptional spaces where innovation meets elegance.
             </motion.p>
@@ -413,11 +413,10 @@ export default function Home() {
               <p className="text-lg md:text-2xl font-serif leading-relaxed text-gray-300">
                 &quot;Working with Ashiya was a transformative experience. Their
                 attention to detail and commitment to quality is unparalleled.
-                They didn&apos;t just build a house; they created our
-                home.&quot;
+                They didn&apos;t just build our office space , they created better than our perpection&quot;
               </p>
               <p className="mt-8 font-semibold uppercase tracking-wider text-gray-400">
-                - John & Jane Doe, Residential Client
+                - Babu Poovan , Miginfra
               </p>
             </motion.div>
           </div>
