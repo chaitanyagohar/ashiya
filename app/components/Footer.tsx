@@ -49,10 +49,10 @@ const Footer = () => {
             <div>
               <p className="text-gray-700 font-medium">+91 9632353101</p>
               <a
-                href="mailto:accounts@ashiya.com"
+                href="mailto:Accounts@ashiya.co.in"
                 className="hover:text-[#c82a2b] transition-colors"
               >
-                accounts@ashiya.com
+                Accounts@ashiya.co.in
               </a>
             </div>
           </div>
