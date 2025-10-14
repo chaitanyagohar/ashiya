@@ -40,7 +40,7 @@ export default function AboutPage() {
   };
 
   const features = [
-    { title: "South India's Leading GEZE Distributor", desc: "As an authorized distributor of GEZE Germany, we provide premium door handles, hinges, locks, and automated partitions." },
+    { title: "South India's Leading GEZE Distributor", desc: "As an authorized distributor of GEZE, we provide premium door handles, hinges, locks, and automated partitions." },
     { title: "Quality & Precision", desc: "We believe in meticulous craftsmanship, superior materials, and cutting-edge technology for long-lasting results." },
     { title: "Tailored to Your Needs", desc: "Every project is customized to reflect your unique vision, whether it’s a luxury home, office, or large-scale construction." },
     { title: "Sustainability & Future-Ready Approach", desc: "We integrate eco-friendly materials and smart technology, ensuring our projects are built for the future." },
@@ -71,7 +71,7 @@ export default function AboutPage() {
                 <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Our Mission</p>
                 <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">Building for People, Designing for Life.</h2>
                 <p className="text-gray-300 leading-relaxed mb-4">At Ashiya, our philosophy is simple: we build for people. Every structure is designed with the end user in mind, prioritizing functionality, comfort, and aesthetics to enhance the way people live and work.</p>
-                <p className="text-gray-300 leading-relaxed">With expertise in interior design, civil construction, and our partnership with GEZE Germany, we go beyond mere construction. We create environments that foster productivity, well-being, and seamless living experiences.</p>
+                <p className="text-gray-300 leading-relaxed">With expertise in interior design, civil construction, and our partnership with GEZE , we go beyond mere construction. We create environments that foster productivity, well-being, and seamless living experiences.</p>
               </motion.div>
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }} className="h-[500px] w-full relative rounded-lg overflow-hidden">
                 <Image src="/about1.jpg" alt="A beautifully designed modern living room" fill className="object-cover" />

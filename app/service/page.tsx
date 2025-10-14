@@ -27,7 +27,7 @@ const servicesData = [
       "Office Interiors: Designing dynamic workspaces that boost efficiency and reflect your corporate culture.",
       "Retail & Showroom Design: Crafting engaging layouts that elevate the customer journey and amplify brand presence.",
       "Hospitality & F&B Spaces: Creating elegant, immersive designs for restaurants, hotels, and cafes.",
-      "Smart & Space-Saving Solutions: Integrating GEZE Germany’s automated partitions for versatile, intelligent spaces.",
+      "Smart & Space-Saving Solutions: Integrating GEZE's automated partitions for versatile, intelligent spaces.",
     ],
   },
   {
@@ -56,8 +56,8 @@ const servicesData = [
   },
   {
     imageUrl: "/geze.jpeg",
-    title: "GEZE GERMANY DISTRIBUTION",
-    description: "As South India’s trusted distributor of GEZE Germany, we offer a premium range of architectural hardware and automation solutions to enhance functionality and safety.",
+    title: "GEZE",
+    description: "As South India’s trusted distributor of GEZE , we offer a premium range of architectural hardware and automation solutions to enhance functionality and safety.",
     expertiseTitle: "Our GEZE Product Range:",
     points: [
         "Door Handles, Hinges & Locks: Supplying high-quality, durable, and stylish hardware for modern architecture.",

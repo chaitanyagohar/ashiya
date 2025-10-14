@@ -192,7 +192,7 @@ export default function CategoryPage({
               </h2>
               <p className="text-gray-300 text-lg mb-10">
                 Discover our full range of premium architectural solutions from
-                GEZE Germany.
+                GEZE .
               </p>
               <Link href="/products">
                 <button className="bg-[#c82a2b] text-white px-10 py-4 rounded-full font-semibold transition-transform duration-300 hover:scale-105">

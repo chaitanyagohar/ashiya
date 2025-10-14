@@ -123,7 +123,7 @@ export default function ClientelePage() {
               className="text-center mb-20"
             >
                 <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Trusted By The Best</p>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold">A Legacy of Successful Partnerships</h2>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold">Our Esteemed End Users</h2>
             </motion.div>
 
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-8 gap-y-12 items-center justify-center">

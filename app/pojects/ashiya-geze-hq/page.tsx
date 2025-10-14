@@ -92,7 +92,7 @@ export default function AshiyaGezeHqPage() {
               >
                 <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">A Showcase of Innovation and Design</h2>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  The design of our own headquarters was a unique opportunity to embody our core principles. The goal was to create a dual-purpose space: a highly functional, collaborative workplace for our team and an immersive showroom to demonstrate the capabilities of our commercial interior services and the sophistication of GEZE Germany products.
+                  The design of our own headquarters was a unique opportunity to embody our core principles. The goal was to create a dual-purpose space: a highly functional, collaborative workplace for our team and an immersive showroom to demonstrate the capabilities of our commercial interior services and the sophistication of GEZE products.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   The resulting design features a minimalist aesthetic with clean lines and a focus on natural light, creating an environment that is both professional and inspiring. Every element, from the automated glass partitions to the ergonomic workstations, was chosen to reflect our commitment to quality, efficiency, and modern design.

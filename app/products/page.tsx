@@ -57,7 +57,7 @@ export default function ProductsPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-xl max-w-3xl mx-auto mt-4 text-gray-300"
             >
-              Featuring best-in-class architectural solutions from GEZE Germany.
+              Featuring best-in-class architectural solutions from GEZE.
             </motion.p>
           </div>
         </section>
@@ -73,7 +73,7 @@ export default function ProductsPage() {
                 transition={{ duration: 0.8 }}
               >
                 <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">A Mark of Quality</p>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">Our Partnership with GEZE Germany</h2>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">Our Partnership with GEZE </h2>
                 <p className="text-gray-300 leading-relaxed mb-4">As South India’s trusted distributor for GEZE, we bring world-renowned German engineering to your doorstep. This partnership allows us to offer a premium range of architectural hardware and automation solutions that are globally recognized for their innovation, durability, and design excellence.</p>
                 <p className="text-gray-300 leading-relaxed">Every GEZE product we supply is a promise of quality, ensuring your project benefits from state-of-the-art technology and timeless aesthetics.</p>
               </motion.div>
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                 transition={{ duration: 0.8 }} 
                 className="h-[500px] w-full relative rounded-lg overflow-hidden"
               >
-                <Image src="/geze.jpeg" alt="GEZE Germany branded hardware" fill className="object-cover" />
+                <Image src="/geze.jpeg" alt="GEZE branded hardware" fill className="object-cover" />
               </motion.div>
             </div>
           </div>

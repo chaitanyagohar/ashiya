@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Column 1: Navigation Links */}
           <div className="space-y-4">
             <Image
-              src="/logo.png"
+              src="/logor.png"
               alt="Ashiya Group Logo"
               width={120}
               height={90}
@@ -47,7 +47,7 @@ const Footer = () => {
               No 2, Opp to Muniswara Temple, Banjara Layout, Hormavu Agara Main Road, Kalkere Bengaluru - 560043
             </p>
             <div>
-              <p className="text-gray-700 font-medium">+91 9900935101</p>
+              <p className="text-gray-700 font-medium">+91 9632353101</p>
               <a
                 href="mailto:accounts@ashiya.com"
                 className="hover:text-[#c82a2b] transition-colors"
