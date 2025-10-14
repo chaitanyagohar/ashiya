@@ -5,8 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 // --- Product Data ---
-// In a real application, this data would likely come from a database or CMS.
-// IMPORTANT: The key (e.g., "door-hardware") MUST match the slug in your main products page.
 const productsData: {
   [key: string]: {
     name: string;
@@ -47,63 +45,43 @@ const productsData: {
       { name: "ROOM PARTITIONING SYSTEMS", imageUrl: "/IG3.avif" },
       { name: "DEMOUNTABLE OFFICE PARTITION", imageUrl: "/IG4.avif" },
       { name: "INTERNAL GLASS DOOR FITTING", imageUrl: "/IG5.avif" },
-      { name: "FITTNESS FOR TOUGHENED GLAS ASSEMBLIES", imageUrl: "/IG6.avif" },
+      { name: "FITTINGS FOR TOUGHENED GLASS ASSEMBLIES", imageUrl: "/IG6.avif" },
     ],
   },
   "mechanical-keys": {
     name: "Mechanical Key Systems",
     products: [
-      {
-        name: "CYLINDER LOCKS WITH SERATED KEYS",
-        imageUrl: "/K1.avif",
-      },
-      {
-        name: "CYLINDER LOCKS WITH REVERSIBLE KEYS",
-        imageUrl: "/K2.avif",
-      },
-      {
-        name: "MASTER KET SYSTEM PLANNING & MAINTAINENCE",
-        imageUrl: "/K3.avif",
-      },
+      { name: "CYLINDER LOCKS WITH SERRATED KEYS", imageUrl: "/K1.avif" },
+      { name: "CYLINDER LOCKS WITH REVERSIBLE KEYS", imageUrl: "/K2.avif" },
+      { name: "MASTER KEY SYSTEM PLANNING & MAINTENANCE", imageUrl: "/K3.avif" },
     ],
   },
   "electronic-access-control": {
     name: "Electronic Access & Control",
     products: [
-       {
-        name: "ACCESS CONTROL SYSTEM FOR MICROENTERPRISES & RESIDENTIALS",
-        imageUrl: "/A1.avif",
-      },
-      {
-        name: "ACCESS CONTROL SOLUTIONS FOR CORPORATES",
-        imageUrl: "/A2.avif",
-      },
-       {
-        name: "ACCESS MEDIA & BADGES",
-        imageUrl: "/A3.avif",
-      },
+      { name: "ACCESS CONTROL SYSTEM FOR MICROENTERPRISES & RESIDENTIALS", imageUrl: "/A1.avif" },
+      { name: "ACCESS CONTROL SOLUTIONS FOR CORPORATES", imageUrl: "/A2.avif" },
+      { name: "ACCESS MEDIA & BADGES", imageUrl: "/A3.avif" },
     ],
   },
   "movable-walls": {
     name: "Movable Walls",
     products: [
-      {
-        name: "SKY FOLD",
-        imageUrl: "/W1.avif",
-      },
-      {
-        name: "GEZE MOVABLE WALL",
-        imageUrl: "/W2.avif",
-      },
+      { name: "SKY FOLD", imageUrl: "/W1.avif" },
+      { name: "GEZE MOVABLE WALL", imageUrl: "/W2.avif" },
     ],
   },
 };
 
-export default function CategoryPage({
-  params,
-}: {
-  params: { category: string };
-}) {
+// ✅ Define props type for the page
+type CategoryPageProps = {
+  params: {
+    category: string;
+  };
+};
+
+// --- Main Component ---
+export default function CategoryPage({ params }: CategoryPageProps) {
   const category = productsData[params.category];
 
   if (!category) {
@@ -178,7 +156,7 @@ export default function CategoryPage({
           </div>
         </section>
 
-        {/* --- CTA to all products --- */}
+        {/* --- CTA Section --- */}
         <section className="bg-[#1a1a1a] py-32">
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <motion.div
@@ -191,8 +169,7 @@ export default function CategoryPage({
                 Explore Other Categories
               </h2>
               <p className="text-gray-300 text-lg mb-10">
-                Discover our full range of premium architectural solutions from
-                GEZE .
+                Discover our full range of premium architectural solutions from GEZE.
               </p>
               <Link href="/products">
                 <button className="bg-[#c82a2b] text-white px-10 py-4 rounded-full font-semibold transition-transform duration-300 hover:scale-105">
