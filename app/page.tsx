@@ -68,19 +68,19 @@ export default function Home() {
     },
   ];
 
-  const projects = [
-    {
-      title: "Ritz-Carlton Penthouse",
-      location: "Wellington, NZ",
-      img: "/project1.jpg",
-    },
-    {
-      title: "Modernist Villa",
-      location: "Queenstown, NZ",
-      img: "/project2.jpg",
-    },
-    { title: "Corporate HQ", location: "Auckland, NZ", img: "/project3.jpg" },
-  ];
+  // const projects = [
+  //   {
+  //     title: "Ritz-Carlton Penthouse",
+  //     location: "Wellington, NZ",
+  //     img: "/project1.jpg",
+  //   },
+  //   {
+  //     title: "Modernist Villa",
+  //     location: "Queenstown, NZ",
+  //     img: "/project2.jpg",
+  //   },
+  //   { title: "Corporate HQ", location: "Auckland, NZ", img: "/project3.jpg" },
+  // ];
 
   const processSteps = [
     {
