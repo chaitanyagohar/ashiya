@@ -73,7 +73,16 @@ const productsData: {
   },
 };
 
-// ✅ Define props type for the page
+// --- Static Generation ---
+// This function tells Next.js which category pages to pre-build at build time.
+export async function generateStaticParams() {
+  const categories = Object.keys(productsData);
+  return categories.map((category) => ({
+    category: category,
+  }));
+}
+
+// --- Props Type Definition ---
 type CategoryPageProps = {
   params: {
     category: string;
@@ -84,6 +93,7 @@ type CategoryPageProps = {
 export default function CategoryPage({ params }: CategoryPageProps) {
   const category = productsData[params.category];
 
+  // Fallback for categories that might not exist
   if (!category) {
     return (
       <div className="bg-[#111111] text-white min-h-screen flex flex-col items-center justify-center text-center">
@@ -169,7 +179,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 Explore Other Categories
               </h2>
               <p className="text-gray-300 text-lg mb-10">
-                Discover our full range of premium architectural solutions from GEZE.
+                Discover our full range of premium architectural solutions.
               </p>
               <Link href="/products">
                 <button className="bg-[#c82a2b] text-white px-10 py-4 rounded-full font-semibold transition-transform duration-300 hover:scale-105">
