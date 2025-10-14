@@ -37,7 +37,7 @@ export default function AshiyaGezeHqPage() {
         <section className="h-[70vh] min-h-[500px] relative flex flex-col items-center justify-center text-center">
           <Image
             src="/project-geze-hero.jpg" // Add a hero image for this project
-            alt="The main entrance of the ASHIYA GEZE HQ"
+            alt="The main entrance of the ASHIYA"
             fill
             priority
             className="object-cover absolute z-0"
@@ -58,7 +58,7 @@ export default function AshiyaGezeHqPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-4xl md:text-7xl font-serif font-bold leading-tight"
             >
-              ASHIYA GEZE HQ
+              ASHIYA
             </motion.h1>
           </div>
         </section>

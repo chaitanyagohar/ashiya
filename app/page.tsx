@@ -68,19 +68,7 @@ export default function Home() {
     },
   ];
 
-  // const projects = [
-  //   {
-  //     title: "Ritz-Carlton Penthouse",
-  //     location: "Wellington, NZ",
-  //     img: "/project1.jpg",
-  //   },
-  //   {
-  //     title: "Modernist Villa",
-  //     location: "Queenstown, NZ",
-  //     img: "/project2.jpg",
-  //   },
-  //   { title: "Corporate HQ", location: "Auckland, NZ", img: "/project3.jpg" },
-  // ];
+
 
   const processSteps = [
     {
@@ -348,7 +336,7 @@ export default function Home() {
               {/* Text Info */}
               <div className="text-center lg:text-left">
                 <h3 className="text-2xl md:text-3xl font-serif font-bold">
-                  ASHIYA GEZE HQ
+                  ASHIYA 
                 </h3>
                 <p className="text-gray-400 mt-2">Year Completed: 2024</p>
                 <p className="text-gray-400 mt-2">Market: Commercial</p>

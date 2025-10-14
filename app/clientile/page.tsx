@@ -5,10 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// --- Dynamic Logo Component ---
+// --- Dynamic Logo Component (No changes needed here) ---
 const DynamicLogo = ({ baseSrc, name }: { baseSrc: string, name: string }) => {
   const [imgSrc, setImgSrc] = useState<string | null>(null);
-  const extensions = ["jpg","png","jpeg"];
+  const extensions = ["png", "jpg", "jpeg"];
 
   useEffect(() => {
     let isMounted = true;
@@ -50,30 +50,57 @@ const DynamicLogo = ({ baseSrc, name }: { baseSrc: string, name: string }) => {
 };
 
 
-// --- Data for Client Logos ---
+// --- Data for Client Logos (Corrected to match filenames) ---
 const clientNames = [
-  "ABB", "ACE", "Adrianse", "AECOM", "Aeries Analytics", "AETRIO", "Alpha Trading Company", "Amazon", 
-  "Amazon Pay", "Amart", "ANSR", "Aparna Craft", "Arcadis", "Artizen", "Aspigo Ventures", "Baker Tilly", 
-  "Beckman Coulter", "Bluebeam", "Blume", "BNY Mellon", "Bosch", "Cigna", "DM", "Dover", "Doughtwc", 
-  "DP World", "Eight Roads", "EisnerAmper", "Eleganz", "EMBA&CV", "Fair Isaac", "Fidelity", "Flutech", 
-  "Freshworks", "Genpact", "Google", "Google Analytics", "Infineon", "Interia", "Invecas", "JLL", 
-  "Kalyani", "Kaplan", "Kion Group", "Knight Frank", "KPMG", "Lokus Labs", "Maersk Line", "Marelli", 
-  "Marlabs", "Mediatek", "Mercedes-Benz", "Micron Elect", "Microsoft", "Modicare", "Modul M", 
-  "Moody's Analytics", "Morgan Stanley", "Mphasis", "Myntra", "Mysore Lights", "Nag Interiors", 
-  "Natixi", "NCSI", "Nestle", "Northsta", "NSN", "NXP", "Ocean", "Oculus", "Om Sai Intex", "Padams", 
-  "Paragon", "Parexel", "Peekay Steel", "PepsiCo", "Polaris", "Pragathi", "Pratikart", "Prestige Group", 
-  "Prosus", "R3 Framestore", "RA Chem Pharma", "Razorpay", "Regal", "Reliance", "RMZ", "Rockstar Games", 
-  "Rockwell Collins", "RSP", "Safran", "Saint-Gobain", "Samco", "SAP", "Seating World", "Sequoia", 
-  "ServiceNow", "Shapoorji Pallonji", "Shivani", "Siemens", "Signify", "SmartWork", "Smartworks", 
-  "Societe Generale", "Sonata", "Space Matrix", "Spacetheory", "SR", "Swastik Group", "SWBI", 
-  "Swiss Re", "Synopsys", "Talin", "Target", "Tech Mahindra", "Tesco", "Teva", "Thomson Reuters", 
-  "3Concepts", "3M", "Trendence", "True Beacon", "Uber", "Urban East", "Vaibhav", "Vaishnavi Group", 
-  "Valspace", "Vestian", "Visa", "VMware", "Welco", "Wells Fargo", "Wesco", "WeWork", "Wipro", 
-  "Yiterra", "ZS","logo141","logo142","logo143","logo144","logo145","logo146","logo147","logo148","logo149","logo150","logo151","logo152",
+    "3concpets", "3m", "abb", "ace build logo", "adraince logo", "aecom", "aeries", "aetrio logo", 
+    "alpha logo", "alpha modular logo", "altimetrik india", "amart logo", "amazon development", "amazon pay", 
+    "amazon", "amd", "anj logo", "ansr cigna", "ansr", "aparna logo", "aradhana logo", "arcadis", 
+    "asatha logo", "ascendas", "aspire logo", "athena health", "audi", "awfis", "azentio", "azim university", 
+    "baker hughes", "beckman coulter", "beryll logo", "bial", "bluebeam logo", "blume global", "bny mellon", 
+    "borgwarner", "bosch", "brigade", "canvas", "cbre", "cgi", "cgs systems", "chegg", "cherry logo", 
+    "cloudera", "cmpss india", "cognizant", "commscope", "companies logo", "credit agricol", "crm services", 
+    "crystal modular", "dassault systems", "dazn software", "de prod logo", "de shaw", "deko logo", 
+    "deloitte", "dover india", "dp world", "eightroads", "eisner amper", "elegant logo", "eleganz logo", 
+    "embassy business", "exotic logo", "experience momentum", "fabcare", "fair issac india", "fidelity", 
+    "flutech logo", "foriegn common wealth", "framestore", "freshworks", "fyerssecurities", "genpact", 
+    "global bussiness", "global calcium", "google analytics", "google coonect", "google", "gravity logo", 
+    "green core logo", "hcl tech", "hcl technologies", "herbalife", "hilton hotel", "hindustan unilever logo", 
+    "hp", "hsbc", "hul", "hytek logo", "ivalue", "ibm", "igi logo", "impetus", "indegene", "indigatech logo", 
+    "indiqube", "inflneon technologies", "infosys", "infrasys logo", "ingka services", "innovative logo", 
+    "integra logo", "intel", "interactive indai", "interia logo", "interrni logo", "invecas technologies", 
+    "ishan infotech","jll logo", "jp morgan", "kalyani logo", "kaplan", "kion india", "knight frank ogo", 
+    "kpmg", "kraft", "kubik logo", "lam research", "larsen turbo", "legato health", "liko logo", 
+    "lkarle logo", "lopex technologies", "lotus lab", "maerssk line", "marelli", "marlabs", "masco logo", 
+    "mediatek", "mercedes", "micron", "microsoft", "modi v care", "modula", "moodys", "morgan stanley", 
+    "mphasis", "myntra", "mysore lights logo", "nag logo", "narsi logo", "natixis global", "ncsi technologies", 
+    "nestle", "nokia networks", "north star logo", "nxp india", "ocean logo", "oculus", "om sai logo", 
+    "padam logo", "paragon", "paraxel", "peekay steel", "pepsico", "pm group", "polaris", "pragathi logo", 
+    "pratikart logo", "prestige", "pro alum logo", "prosus", "protech logo", "rachem pharma", "razorpay", 
+    "redseer", "reliance life", "rmz", "rockstar games", "rockwell collins", "rp goenka", "rsp", "rtizen lgo", 
+    "safran hal", "saint logo", "samco", "sap logo", "seating logo", "sequoia capital", "service now", 
+    "shaoopji pallonji", "shivani logo", "siemens", "signify innoavtions", "smart work", "rp goenka",
+    "societe general", "sonata software", "space matrix", "spacetheory logo", "spigo logo", "sr logo", 
+    "sumo bangalore", "swasthik logo", "swbi", "swiss re", "synopsys", "talin logo", "target indi", 
+    "tata reality", "tech mahindra", "techno logo", "technostar", "tesco", "teva pharma", "th", 
+    "thomson reuters", "thought works", "trendence", "true beacon", "uber", "uniglaze logo", 
+    "urban eat logo", "vaibhav logo", "verizon", "vestian logo", "viashnavi", "visa", "viterra", 
+    "vm ware", "volvo", "we nwork", "welco", "wells fargo", "wesco", "windor logo", "wipro", "workspace", "zee"
 ];
 
-const clientLogos = clientNames.map((name, index) => ({
-    baseSrc: `/company/logo${index + 1}`,
+
+// --- Helper function to convert name to a filename ---
+const generateSlug = (name: string) => {
+  return name
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/\s+/g, ' '); // Keep single spaces
+};
+
+// --- Sort names alphabetically and generate paths from the name ---
+const clientLogos = clientNames
+  .sort((a, b) => a.localeCompare(b))
+  .map(name => ({
+    baseSrc: `/logos2/${generateSlug(name)}`,
     name: name,
 }));
 
@@ -130,7 +157,6 @@ export default function ClientelePage() {
               {clientLogos.map((logo, index) => (
                 <div
                   key={index}
-                  // --- MODIFIED: Changed w-32 to w-full for flexible width ---
                   className="relative w-full h-20 p-2 transition-transform duration-300 hover:scale-110"
                 >
                   <DynamicLogo baseSrc={logo.baseSrc} name={logo.name} />
