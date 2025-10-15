@@ -1,6 +1,5 @@
 // app/products/[category]/page.tsx
 
-// You must keep this to make animations work.
 "use client";
 
 import Image from "next/image";
@@ -80,18 +79,9 @@ const productsData: Record<
   },
 };
 
-// --- REMOVE THIS FUNCTION ---
-// export async function generateStaticParams() {
-//   return Object.keys(productsData).map((category) => ({ category }));
-// }
-
-// --- Props type ---
-type CategoryPageProps = {
-  params: { category: string };
-};
-
 // --- Component ---
-export default function CategoryPage({ params }: CategoryPageProps) {
+// The fix is here: using an inline type for the props
+export default function CategoryPage({ params }: { params: { category: string } }) {
   const category = productsData[params.category];
 
   if (!category) {
