@@ -1,17 +1,17 @@
-export const dynamic = "force-dynamic";
+// app/products/[category]/page.tsx
 
+// You must keep this to make animations work.
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 // --- Product Data ---
-const productsData: {
-  [key: string]: {
-    name: string;
-    products: { name: string; imageUrl: string }[];
-  };
-} = {
+const productsData: Record<
+  string,
+  { name: string; products: { name: string; imageUrl: string }[] }
+> = {
   "door-hardware": {
     name: "Door Hardware",
     products: [
@@ -60,8 +60,14 @@ const productsData: {
   "electronic-access-control": {
     name: "Electronic Access & Control",
     products: [
-      { name: "ACCESS CONTROL SYSTEM FOR MICROENTERPRISES & RESIDENTIALS", imageUrl: "/A1.avif" },
-      { name: "ACCESS CONTROL SOLUTIONS FOR CORPORATES", imageUrl: "/A2.avif" },
+      {
+        name: "ACCESS CONTROL SYSTEM FOR MICROENTERPRISES & RESIDENTIALS",
+        imageUrl: "/A1.avif",
+      },
+      {
+        name: "ACCESS CONTROL SOLUTIONS FOR CORPORATES",
+        imageUrl: "/A2.avif",
+      },
       { name: "ACCESS MEDIA & BADGES", imageUrl: "/A3.avif" },
     ],
   },
@@ -74,27 +80,20 @@ const productsData: {
   },
 };
 
-// --- Static Generation ---
-// This function tells Next.js which category pages to pre-build at build time.
-export async function generateStaticParams() {
-  const categories = Object.keys(productsData);
-  return categories.map((category) => ({
-    category: category,
-  }));
-}
+// --- REMOVE THIS FUNCTION ---
+// export async function generateStaticParams() {
+//   return Object.keys(productsData).map((category) => ({ category }));
+// }
 
-// --- Props Type Definition ---
+// --- Props type ---
 type CategoryPageProps = {
-  params: {
-    category: string;
-  };
+  params: { category: string };
 };
 
-// --- Main Component ---
+// --- Component ---
 export default function CategoryPage({ params }: CategoryPageProps) {
   const category = productsData[params.category];
 
-  // Fallback for categories that might not exist
   if (!category) {
     return (
       <div className="bg-[#111111] text-white min-h-screen flex flex-col items-center justify-center text-center">
@@ -114,7 +113,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   return (
     <div className="bg-[#111111] text-white">
       <main>
-        {/* --- Hero Section --- */}
+        {/* --- Hero --- */}
         <section className="pt-40 pb-20 text-center">
           <div className="container mx-auto px-4">
             <motion.p
@@ -136,16 +135,16 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
         </section>
 
-        {/* --- Products Grid Section --- */}
+        {/* --- Products grid --- */}
         <section className="pb-32">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-              {category.products.map((product, index) => (
+              {category.products.map((product, i) => (
                 <motion.div
-                  key={index}
+                  key={i}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: index * 0.1 }}
+                  transition={{ duration: 0.7, delay: i * 0.1 }}
                   viewport={{ once: true, amount: 0.3 }}
                   className="group"
                 >
@@ -167,7 +166,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
         </section>
 
-        {/* --- CTA Section --- */}
+        {/* --- CTA --- */}
         <section className="bg-[#1a1a1a] py-32">
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <motion.div
