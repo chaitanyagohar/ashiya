@@ -12,9 +12,7 @@ export default function CategoryClient({ category }: CategoryClientProps) {
   if (!category) {
     return (
       <div className="bg-[#111111] text-white min-h-screen flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl font-serif font-bold animate-fadeIn">
-          Category Not Found
-        </h1>
+        <h1 className="text-4xl font-serif font-bold animate-fadeIn">Category Not Found</h1>
         <p className="mt-4 text-gray-300 animate-fadeIn delay-200">
           The product category you&apos;re looking for does not exist.
         </p>
@@ -46,15 +44,20 @@ export default function CategoryClient({ category }: CategoryClientProps) {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {category.products.map((product, i) => (
-              <div key={i} className={`group overflow-hidden mb-4 rounded-sm animate-slideUp delay-${i * 100}`}>
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-contain aspect-[3/2] transition-transform duration-500 group-hover:scale-105"
-                />
-                <h3 className="text-sm text-gray-400 uppercase tracking-widest font-semibold text-center mt-4 animate-fadeIn delay-200">
+              <div
+                key={i}
+                className="group overflow-hidden rounded-sm animate-slideUp"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="relative w-full h-72 bg-[#1a1a1a] rounded-sm overflow-hidden">
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.name}
+                    fill
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-white uppercase tracking-widest font-semibold text-center mt-4 animate-fadeIn">
                   {product.name}
                 </h3>
               </div>
