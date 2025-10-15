@@ -1,7 +1,6 @@
-// app/products/[category]/page.tsx
-
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -79,10 +78,19 @@ const productsData: Record<
   },
 };
 
+// --- Props Interface ---
+interface CategoryPageProps {
+  params: { category: string };
+}
+
 // --- Component ---
-// The fix is here: using an inline type for the props
-export default function CategoryPage({ params }: { params: { category: string } }) {
-  const category = productsData[params.category];
+const CategoryPage: React.FC<CategoryPageProps> = ({ params }) => {
+  const [category, setCategory] = useState(productsData[params.category]);
+
+  // Optional: handle missing category dynamically
+  useEffect(() => {
+    setCategory(productsData[params.category]);
+  }, [params.category]);
 
   if (!category) {
     return (
@@ -182,4 +190,6 @@ export default function CategoryPage({ params }: { params: { category: string } 
       </main>
     </div>
   );
-}
+};
+
+export default CategoryPage;
