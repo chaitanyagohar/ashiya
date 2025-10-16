@@ -414,7 +414,7 @@ export default function Home() {
         <section className="bg-[#111111] py-24 overflow-hidden border-t border-b border-gray-800">
           <div className="text-center mb-12">
             <h2 className="text-2xl font-serif font-bold text-gray-400">
-              Trusted by Industry Leaders
+              Our Esteemed End Users
             </h2>
           </div>
           <div className="flex animate-marquee-infinite">
