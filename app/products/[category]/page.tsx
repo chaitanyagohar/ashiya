@@ -1,6 +1,7 @@
 // app/products/[category]/page.tsx
 import CategoryClient from "./CategoryClient";
 
+// --- Products Data ---
 const productsData: Record<
   string,
   { name: string; products: { name: string; imageUrl: string }[] }
@@ -67,12 +68,24 @@ const productsData: Record<
   },
 };
 
-interface PageProps {
-  params: { category: string };
+// --- Properly Typed Page Props ---
+interface CategoryPageProps {
+  params: {
+    category: string;
+  };
 }
 
-export default function CategoryPage({ params }: PageProps) {
+// --- Generate Static Params (for Next.js 13+ App Router) ---
+export async function generateStaticParams() {
+  return Object.keys(productsData).map((key) => ({
+    category: key,
+  }));
+}
+
+// --- Page Component ---
+export default function CategoryPage({ params }: CategoryPageProps) {
   const key = params.category.toLowerCase();
   const category = productsData[key] || null;
+
   return <CategoryClient category={category} />;
 }
